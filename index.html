@@ -9,6 +9,18 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"
+        defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <link rel="stylesheet" href="./src/styles/app.css">
     <script src="src/utils/script.js" defer></script>
     <title>DashBoard Finance</title>
@@ -29,7 +41,7 @@
 
     <main>
         <section id="container">
-            <h2>Resumo do Mercado</h2>
+            <h3>Resumo do Mercado</h3>
             <div id="item-container1" class="item-container">
                 <p id="name-money"></p>
                 <p id="value-money"></p>
@@ -49,6 +61,46 @@
                 <p id="name-money"></p>
                 <p id="value-money"></p>
                 <p id="percnt-money"></p>
+            </div>
+            <div id="grafic1" class="item-container">
+                <canvas id="meuGrafico" width="400" height="200"></canvas>
+            </div>
+            <div id="grafic2" class="item-container">
+                <canvas id="meuGrafico" width="400" height="200"></canvas>
+            </div>
+            <div id="conversor" class="item-container">
+                <h4>Conversor de Moedas</h4>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="valorInput"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '')" placeholder="1000"
+                        aria-label="Valor a converter">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" onclick="converter()">Converter</button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Selecione a moeda"
+                        aria-label="Campo com dropdown" id="currency-input" readonly>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Moeda</button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" onclick="selecionarMoeda('BRL')">BRL - Real
+                                Brasileiro</button>
+                            <button class="dropdown-item" onclick="selecionarMoeda('USD')">USD - Dólar
+                                Americano</button>
+                            <button class="dropdown-item" onclick="selecionarMoeda('EUR')">EUR - Euro</button>
+                            <button class="dropdown-item" onclick="selecionarMoeda('GBP')">GBP - Libra
+                                Esterlina</button>
+                            <button class="dropdown-item" onclick="selecionarMoeda('JPY')">JPY - Iene Japonês</button>
+                            <button class="dropdown-item" onclick="selecionarMoeda('BTC')">BTC - Bitcoin</button>
+                            <button class="dropdown-item" onclick="selecionarMoeda('ETH')">ETH - Ethereum</button>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <button class="dropdown-item" onclick="alert('Mais moedas em breve')">Mais
+                                moedas...</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
