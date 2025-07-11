@@ -154,3 +154,4 @@ fetch('https://economia.awesomeapi.com.br/json/daily/USD-BRL/30')
   }
 
   carregarCotacoes();
+  
