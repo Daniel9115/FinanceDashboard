@@ -70,27 +70,53 @@ function converter() {
 }
 
 fetch('https://economia.awesomeapi.com.br/json/daily/USD-BRL/30')
-  .then(res => res.json())
-  .then(dados => {
-    const labels = dados.map(item => {
-      const date = new Date(item.timestamp * 1000);
-      return `${date.getDate()}/${date.getMonth()+1}`;
-    }).reverse();
+    .then(res => res.json())
+    .then(dados => {
+        const labels = dados.map(item => {
+            const date = new Date(item.timestamp * 1000);
+            return `${date.getDate()}/${date.getMonth() + 1}`;
+        }).reverse();
 
-    const valores = dados.map(item => Number(item.bid)).reverse();
+        const valores = dados.map(item => Number(item.bid)).reverse();
 
-    const ctx = document.getElementById('meuGrafico').getContext('2d');
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Dólar (R$)',
-          data: valores,
-          borderColor: 'rgb(75, 192, 192)',
-          fill: false,
-          tension: 0.1
-        }]
-      }
+        const ctx = document.getElementById('Grafico1').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Dólar (R$)',
+                    data: valores,
+                    borderColor: 'rgba(206, 206, 206, 1)',
+                    fill: false,
+                    tension: 0.1
+                }]
+            }
+        });
     });
-  });
+
+fetch('https://economia.awesomeapi.com.br/json/daily/USD-BRL/30')
+    .then(res => res.json())
+    .then(dados => {
+        const labels = dados.map(item => {
+            const date = new Date(item.timestamp * 1000);
+            return `${date.getDate()}/${date.getMonth() + 1}`;
+        }).reverse();
+
+        const valores = dados.map(item => Number(item.bid)).reverse();
+
+        const ctx = document.getElementById('Grafico2').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Dólar (R$)',
+                    data: valores,
+                    borderColor: 'rgba(206, 206, 206, 1)',
+                    fill: false,
+                    tension: 0.1
+                }]
+            }
+        });
+    });
