@@ -120,3 +120,37 @@ fetch('https://economia.awesomeapi.com.br/json/daily/USD-BRL/30')
             }
         });
     });
+
+ const simbolos = ['PETR4.SA', 'VALE3.SA', 'AAPL', '^BVSP', '^IXIC'];
+
+  async function carregarCotacoes() {
+    const container = document.getElementById('acoes');
+
+    for (const simbolo of simbolos) {
+      try {
+        const dados = await yahoo.quote({ symbol: simbolo });
+        const preco = dados.regularMarketPrice;
+
+        const pCodigo = document.createElement('p');
+        pCodigo.textContent = simbolo;
+
+        const pPreco = document.createElement('p');
+        pPreco.textContent = preco ? preco.toFixed(2) : '—';
+
+        container.appendChild(pCodigo);
+        container.appendChild(pPreco);
+      } catch (err) {
+        console.error('Erro ao buscar cotação de:', simbolo);
+        const pCodigo = document.createElement('p');
+        pCodigo.textContent = simbolo;
+
+        const pErro = document.createElement('p');
+        pErro.textContent = 'Erro';
+
+        container.appendChild(pCodigo);
+        container.appendChild(pErro);
+      }
+    }
+  }
+
+  carregarCotacoes();
