@@ -13,6 +13,7 @@ body {
         "wdth" 100;
     background-color: #13171E;
     height: 100vh;
+    width: 100vw;
 }
 
 header {
@@ -25,6 +26,14 @@ header {
 
 main {
     height: calc(100vh - 3.5em);
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
 }
 
 .nav-item,
@@ -41,6 +50,12 @@ header {
 main,
 header {
     padding: 1em 20%;
+    width: 100%;
+}
+
+header>h2 {
+    font-size: 1.5em;
+    font-weight: 700;
 }
 
 #container {
@@ -79,4 +94,31 @@ header {
 
 .item-container>:nth-child(3) {
     font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1em;
+    }
+
+    #container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: min-content;
+    }
+
+    header {
+        padding: 1em;
+    }
+
+    .nav-item {
+        margin-left: 0.5em;
+    }
+
+    #container>:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    
 }
