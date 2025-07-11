@@ -20,7 +20,7 @@ Um dashboard simples feito apenas com **JavaScript puro** (sem frameworks) para 
 ## 💻 Demonstração
 
 Acesse o dashboard online pelo GitHub Pages:  
-[🔗 Ver Demo](https://Daniel9115.github.io/finance-dashboard/)
+[🔗 Ver Demo](https://daniel9115.github.io/FinanceDashboard/)
 
 ## 📂 Estrutura do Projeto
 
