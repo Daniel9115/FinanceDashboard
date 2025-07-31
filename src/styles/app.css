@@ -62,7 +62,6 @@ header>h2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    flex-wrap: wrap;
     gap: 1em;
     height: 100%;
 }
