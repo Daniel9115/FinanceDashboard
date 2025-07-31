@@ -115,7 +115,7 @@ fetch('https://economia.awesomeapi.com.br/json/daily/EUR-BRL/30')
                     data: valores,
                     borderColor: 'lightblue',
                     fill: false,
-                    tension: 0.1
+                    tension: 0.1 
                 }]
             }
         });
