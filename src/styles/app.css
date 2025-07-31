@@ -184,7 +184,7 @@ a {
 
 @media (max-width: 768px) {
     main {
-        padding: 1em;
+        padding: 1em; 
     }
 
     #container {
