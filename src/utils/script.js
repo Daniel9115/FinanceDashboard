@@ -87,7 +87,7 @@ fetch('https://economia.awesomeapi.com.br/json/daily/USD-BRL/30')
                 datasets: [{
                     label: 'Dólar (R$)',
                     data: valores,
-                    borderColor: 'rgba(206, 206, 206, 1)',
+                    borderColor: 'lightblue',
                     fill: false,
                     tension: 0.1
                 }]
@@ -95,7 +95,7 @@ fetch('https://economia.awesomeapi.com.br/json/daily/USD-BRL/30')
         });
     });
 
-fetch('https://economia.awesomeapi.com.br/json/daily/USD-BRL/30')
+fetch('https://economia.awesomeapi.com.br/json/daily/EUR-BRL/30')
     .then(res => res.json())
     .then(dados => {
         const labels = dados.map(item => {
@@ -111,9 +111,9 @@ fetch('https://economia.awesomeapi.com.br/json/daily/USD-BRL/30')
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Dólar (R$)',
+                    label: 'Euro (R$)',
                     data: valores,
-                    borderColor: 'rgba(206, 206, 206, 1)',
+                    borderColor: 'lightblue',
                     fill: false,
                     tension: 0.1
                 }]
