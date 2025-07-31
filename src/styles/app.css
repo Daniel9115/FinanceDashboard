@@ -33,19 +33,13 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
 }
 
-.nav-item,
 header {
     text-decoration: none;
 
 }
 
-.nav-item {
-    font-weight: bold;
-    margin-left: 1em;
-}
 
 header {
     padding: 1em 25%;
@@ -194,10 +188,6 @@ a {
 
     header {
         padding: 1em;
-    }
-
-    .nav-item {
-        margin-left: 0.5em;
     }
 
     #container>:nth-child(1) {
